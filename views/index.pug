@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= "Google Query"
+  form(action="/", method="post")
+    label Google Query:
+    input(type="text", name="query", size=50, value=query)
+    input(type="submit", value="Submit")
+  if result
+    ul
+      each val in result
+        li
+          h3=val.header
+          p=val.description
