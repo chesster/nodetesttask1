@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var request_promise = require('request-promise');
+var requestPromise = require('request-promise');
 var cheerio = require('cheerio');
 var iconv = require('iconv-lite');
 
@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   var resultSet = Array();
   var query = req.body.query;
-  request_promise({
+  requestPromise({
     uri: 'http://www.google.pl/search?q=' + query,
     encoding: null,
     transform: function (body) {
