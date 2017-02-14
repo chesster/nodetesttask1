@@ -8,7 +8,7 @@ block content
     input(type="submit", value="Submit")
   if result
     ul
-      each val in result
+      each resultItem in result
         li
-          h3=val.header
-          p=val.description
+          h3=resultItem.header
+          p=resultItem.description
