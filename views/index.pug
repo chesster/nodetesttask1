@@ -3,7 +3,7 @@ extends layout
 block content
   h1= "Google Query"
   form(action="/", method="post")
-    label Google Query:
+    label Query:
     input(type="text", name="query", size=50, value=query)
     input(type="submit", value="Submit")
   if result

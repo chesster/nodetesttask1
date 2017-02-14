@@ -1,5 +1,7 @@
 body {
-  padding: 20px 100px;
+  padding: 20px;
+  width: 800px;
+  margin: auto;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,4 +15,9 @@ h3 {
 
 p {
   color: #aaa;
+}
+
+ul.menu {
+  position: absolute;;
+  margin-left: 220px;
 }
