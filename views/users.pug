@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= "User Posts"
+  form(action="/users/", method="post")
+    label User ID:
+    input(type="text", name="user_id", size=10, value=user_id)
+    input(type="submit", value="Submit")
+  if result
+    ul
+      each post in result
+        li
+          h3=post.title
+          p=post.body
+          if post.comments
+            ul
+              each comment in post.comments
+                li
+                  h4=comment.name
+                  p=comment.email
+                  p=comment.body
