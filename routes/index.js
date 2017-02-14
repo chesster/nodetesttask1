@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   var resultSet = Array();
-  query = req.body.query;
+  var query = req.body.query;
   request_promise({
     uri: 'http://www.google.pl/search?q=' + query,
     encoding: null,
@@ -26,12 +26,13 @@ router.post('/', function(req, res, next) {
         description: $(element).find('span.st').text(),
       });
     });
-    res.render('index', {
-      'query' : req.body.query,
-      'result': resultSet,
-    });
   }).catch(function (err) {
     console.log(err);
+  }).finally(function () {
+    res.render('index', {
+      'query' : query,
+      'result': resultSet,
+    });
   });
 });
 
